@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@400;700;900&display=swap');
 
 :root {
-  --left-bg-color: rgba(255, 202, 176, 0.607);
-  --right-bg-color: rgba(255, 154, 60, 0.6);
-  --left-btn-hover-color: #febea0;
-  --right-btn-hover-color: #d67e2c;
+  --left-bg-color: #a2a8d3a7;
+  --right-bg-color: #9fd3c790;
+  --left-btn-hover-color: #a2a8d3;
+  --right-btn-hover-color: #9fd3c7;
+  --hover-width: 75%;
+  --other-width: 25%;
 }
 
 * {
@@ -95,4 +97,36 @@ h1 {
   position: absolute;
   width: 100%;
   height: 100%;
+}
+
+.split.left,
+.split.left::before,
+.split.right,
+.split.right::before {
+  transition: all 1000ms ease-in-out;
+}
+
+.hover-left .left {
+  width: var(--hover-width);
+}
+
+.hover-left .right {
+  width: var(--other-width);
+}
+.hover-right .right {
+  width: var(--hover-width);
+}
+
+.hover-right .left {
+  width: var(--other-width);
+}
+
+@media (max-width: 800px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .btn {
+    padding: 0.5rem 1.5rem;
+  }
 }
